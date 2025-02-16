@@ -39,7 +39,7 @@ brew update
 
 # Instalar herramientas con Homebrew
 echo "Instalando herramientas con Homebrew..."
-brew install zsh zellij zoxide neovim node python bat fzf fastfetch atuin zsh-autosuggestions zsh-syntax-highlighting powerlevel10k
+brew install zsh zellij zoxide neovim node python bat fzf fastfetch atuin zsh-autosuggestions zsh-syntax-highlighting powerlevel10k eza
 
 # Agregar Zsh a /etc/shells si no está incluido
 ZSH_PATH="$(brew --prefix)/bin/zsh"
@@ -145,6 +145,7 @@ echo "- npm: $(npm --version)"
 echo "- Python: $(python3 --version)"
 echo "- bat: $(bat --version)"
 echo "- fzf: $(fzf --version)"
+echo "- eza: $(eza --version)"
 echo "- fastfetch: $(fastfetch --version)"
 echo "- Atuin: $(atuin --version)"
 echo "- Powerlevel10k: Instalado y configurado"
