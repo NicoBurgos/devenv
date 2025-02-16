@@ -19,15 +19,14 @@ if ! command_exists brew; then
     echo "Instalando Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     
-    # Configurar Homebrew en el PATH (especialmente para Linux)
-    if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    elif [ -f /opt/homebrew/bin/brew ]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    fi
-else
-    echo "Homebrew ya está instalado."
+    # Configurar Homebrew en el PATH
+    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+# Asegurarse de que Homebrew esté en el PATH
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+echo "Homebrew ya está instalado."
 
 # Actualizar Homebrew
 echo "Actualizando Homebrew..."
