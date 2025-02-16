@@ -135,3 +135,4 @@ if [[ -z "$ZELLIJ" && -n "$TTY" ]]; then
   exit
 fi
 
+alias ls="eza --color=always --long --git --no-permissions --icons=always"
