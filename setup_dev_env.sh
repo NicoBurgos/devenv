@@ -22,6 +22,8 @@ if ! command_exists brew; then
     # Configurar Homebrew en el PATH
     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     test -d /opt/homebrew && eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo >> /home/nico/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/nico/.bashrc
 fi
 
 # Asegurarse de que Homebrew esté en el PATH
