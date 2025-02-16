@@ -114,23 +114,23 @@ else
 fi
 
 # Configurar Atuin (gestión del historial de comandos)
-if command_exists atuin; then
-    echo "Configurando Atuin..."
-    echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
-    echo "Atuin ha sido configurado. Reinicia tu shell para aplicarlo."
-else
-    echo "Atuin no está instalado. Asegúrate de que se instaló correctamente."
-fi
+#if command_exists atuin; then
+#    echo "Configurando Atuin..."
+#    echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
+#    echo "Atuin ha sido configurado. Reinicia tu shell para aplicarlo."
+#else
+#    echo "Atuin no está instalado. Asegúrate de que se instaló correctamente."
+#fi
 
 # Configurar zsh-autosuggestions y zsh-syntax-highlighting
-if brew list zsh-autosuggestions &> /dev/null && brew list zsh-syntax-highlighting &> /dev/null; then
-    echo "Configurando zsh-autosuggestions y zsh-syntax-highlighting..."
-    echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-    echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-    echo "Plugins de Zsh configurados correctamente."
-else
-    echo "zsh-autosuggestions o zsh-syntax-highlighting no están instalados. Asegúrate de que se instalaron correctamente."
-fi
+#if brew list zsh-autosuggestions &> /dev/null && brew list zsh-syntax-highlighting &> /dev/null; then
+#    echo "Configurando zsh-autosuggestions y zsh-syntax-highlighting..."
+#    echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+#    echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+#    echo "Plugins de Zsh configurados correctamente."
+#else
+#    echo "zsh-autosuggestions o zsh-syntax-highlighting no están instalados. Asegúrate de que se instalaron correctamente."
+#fi
 
 # Mensaje final
 echo "¡Entorno de desarrollo configurado con éxito!"
