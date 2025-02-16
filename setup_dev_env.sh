@@ -21,10 +21,11 @@ if ! command_exists brew; then
     
     # Configurar Homebrew en el PATH
     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    test -d /opt/homebrew && eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Asegurarse de que Homebrew esté en el PATH
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(brew shellenv)"
 
 echo "Homebrew ya está instalado."
 
@@ -65,6 +66,9 @@ if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
     sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 else
     echo "El tema Powerlevel10k no se encuentra instalado correctamente."
+    echo "Instalando Powerlevel10k manualmente..."
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${HOME}/.oh-my-zsh/custom/themes/powerlevel10k"
+    sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 fi
 
 # Clonar el repositorio con las configuraciones personalizadas
@@ -96,12 +100,12 @@ else
     echo "No se encontró la carpeta de configuraciones de Zellij en el repositorio."
 fi
 
-# Copiar configuraciones de Zsh
-if [ -d "$REPO_DIR/zsh" ]; then
+# Copiar configuraciones de Zsh (si la carpeta existe y no está vacía)
+if [ -d "$REPO_DIR/zsh" ] && [ -n "$(ls -A "$REPO_DIR/zsh")" ]; then
     echo "Copiando configuraciones de Zsh..."
     cp -r "$REPO_DIR/zsh/"* "$HOME/"
 else
-    echo "No se encontró la carpeta de configuraciones de Zsh en el repositorio."
+    echo "No se encontró la carpeta de configuraciones de Zsh en el repositorio o está vacía."
 fi
 
 # Configurar Atuin (gestión del historial de comandos)
