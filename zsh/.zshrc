@@ -129,3 +129,9 @@ source "/home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions
 eval "$(zoxide init zsh)"
 
 eval "$(atuin init zsh)"
+
+if [[ -z "$ZELLIJ" && -n "$TTY" ]]; then
+  zellij attach --create
+  exit
+fi
+
