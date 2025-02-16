@@ -1,138 +1,142 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Habilita el "instant prompt" de Powerlevel10k. Debe estar cerca de la parte superior de ~/.zshrc.
+# Esto mejora la velocidad de inicio de Zsh al cargar el prompt de manera asíncrona.
+# Cualquier código de inicialización que requiera entrada del usuario (por ejemplo, solicitudes de contraseña) debe ir antes de este bloque.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
+# Si vienes de Bash, es posible que necesites ajustar tu $PATH.
+# Ejemplo: Agrega directorios personalizados a $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your Oh My Zsh installation.
+# Ruta a la instalación de Oh My Zsh.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Establece el tema que se cargará. Si se establece en "random", cargará un tema aleatorio cada vez que se inicie Oh My Zsh.
+# Para ver qué tema se cargó, ejecuta: echo $RANDOM_THEME
+# Ver más temas en: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
+# Lista de temas para elegir al cargar aleatoriamente.
+# Si se establece esta variable cuando ZSH_THEME="random", Zsh cargará un tema de esta lista en lugar de buscar en $ZSH/themes/.
+# Si se establece como una lista vacía, esta variable no tendrá efecto.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
+# Descomenta la siguiente línea para usar completado sensible a mayúsculas/minúsculas.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
+# Descomenta la siguiente línea para usar completado insensible a guiones.
+# El completado sensible a mayúsculas/minúsculas debe estar desactivado. _ y - serán intercambiables.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Descomenta una de las siguientes líneas para cambiar el comportamiento de actualización automática.
+# zstyle ':omz:update' mode disabled  # desactiva las actualizaciones automáticas
+# zstyle ':omz:update' mode auto      # actualiza automáticamente sin preguntar
+# zstyle ':omz:update' mode reminder  # solo te recuerda actualizar cuando es necesario
 
-# Uncomment the following line to change how often to auto-update (in days).
+# Descomenta la siguiente línea para cambiar la frecuencia de actualización automática (en días).
 # zstyle ':omz:update' frequency 13
 
-# Uncomment the following line if pasting URLs and other text is messed up.
+# Descomenta la siguiente línea si pegar URLs y otro texto se ve mal.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-# Uncomment the following line to disable colors in ls.
+# Descomenta la siguiente línea para desactivar los colores en el comando `ls`.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
+# Descomenta la siguiente línea para desactivar la configuración automática del título de la terminal.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
+# Descomenta la siguiente línea para habilitar la corrección automática de comandos.
 # ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# Descomenta la siguiente línea para mostrar puntos rojos mientras se espera la finalización de un comando.
+# También puedes establecer otro texto para mostrar en lugar de los puntos rojos.
+# COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Nota: Esta configuración puede causar problemas con prompts multilínea en Zsh < 5.7.1 (ver #5765)
 # COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
+# Descomenta la siguiente línea si deseas desactivar el marcado de archivos no rastreados en VCS como "sucios".
+# Esto hace que la verificación del estado del repositorio sea mucho más rápida en repositorios grandes.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
+# Descomenta la siguiente línea si deseas cambiar el formato de la marca de tiempo en el historial de comandos.
+# Puedes elegir uno de los tres formatos opcionales:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
+# o establecer un formato personalizado usando las especificaciones de la función strftime.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# ¿Deseas usar una carpeta personalizada diferente a $ZSH/custom?
+# ZSH_CUSTOM=/ruta/a/nueva/carpeta
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# ¿Qué plugins deseas cargar?
+# Los plugins estándar se encuentran en $ZSH/plugins/
+# Los plugins personalizados pueden agregarse en $ZSH_CUSTOM/plugins/
+# Ejemplo de formato: plugins=(rails git textmate ruby lighthouse)
+# Agrega con cuidado, ya que demasiados plugins pueden ralentizar el inicio de Zsh.
 #plugins=(
-#git
-#zsh-syntax-highlighting
-#zsh-autosuggestions
+#  git
+#  zsh-syntax-highlighting
+#  zsh-autosuggestions
 #)
 
+# Carga Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Configuración del usuario
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# Puedes necesitar establecer manualmente tu entorno de idioma.
+# export LANG=es_ES.UTF-8
 
-# Preferred editor for local and remote sessions
+# Editor preferido para sesiones locales y remotas.
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
 #   export EDITOR='nvim'
 # fi
 
-# Compilation flags
+# Banderas de compilación
 # export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# Establece alias personales, sobrescribiendo los proporcionados por Oh My Zsh.
+# Los alias pueden colocarse aquí, aunque se recomienda definirlos en un archivo en la carpeta $ZSH_CUSTOM.
+# Ejemplos:
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
+# Para ver una lista completa de alias activos, ejecuta `alias`.
 #
-# Example aliases
+# Ejemplo de alias
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# Para personalizar el prompt, ejecuta `p10k configure` o edita ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Configura NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Carga nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Carga la completación de bash para nvm
 
+# Agrega Homebrew al PATH
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# Carga zsh-syntax-highlighting y zsh-autosuggestions
 source "/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "/home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" 
+source "/home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# Inicializa zoxide (navegación inteligente de directorios)
 eval "$(zoxide init zsh)"
 
+# Inicializa atuin (gestión del historial de comandos)
 eval "$(atuin init zsh)"
 
-if [[ -z "$ZELLIJ" && -n "$TTY" ]]; then
-  zellij attach --create
-  exit
-fi
+# Inicia Zellij automáticamente al iniciar Zsh (opcional)
+#if [[ -z "$ZELLIJ" && -n "$TTY" ]]; then
+#  zellij attach --create
+#  exit
+#fi
 
+# Alias para el comando `ls` usando `eza` (una alternativa moderna a `ls`)
 alias ls="eza --color=always --long --git --no-permissions --icons=always"
