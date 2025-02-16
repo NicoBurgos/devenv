@@ -124,11 +124,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-
+source "/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "/home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" 
 eval "$(zoxide init zsh)"
-
-. "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
