@@ -55,7 +55,7 @@ fi
 # Instalar Oh My Zsh (si no está instalado)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Instalando Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
     echo "Oh My Zsh ya está instalado."
 fi
@@ -100,12 +100,13 @@ else
     echo "No se encontró la carpeta de configuraciones de Zellij en el repositorio."
 fi
 
-# Copiar configuraciones de Zsh (si la carpeta existe y no está vacía)
-if [ -d "$REPO_DIR/zsh" ] && [ -n "$(ls -A "$REPO_DIR/zsh")" ]; then
+# Copiar configuraciones de Zsh (incluyendo archivos ocultos)
+if [ -d "$REPO_DIR/zsh" ]; then
     echo "Copiando configuraciones de Zsh..."
-    cp -r "$REPO_DIR/zsh/"* "$HOME/"
+    # Usar find para copiar archivos y directorios, incluyendo los ocultos
+    find "$REPO_DIR/zsh" -mindepth 1 -maxdepth 1 -exec cp -r {} "$HOME/" \;
 else
-    echo "No se encontró la carpeta de configuraciones de Zsh en el repositorio o está vacía."
+    echo "No se encontró la carpeta de configuraciones de Zsh en el repositorio."
 fi
 
 # Configurar Atuin (gestión del historial de comandos)
